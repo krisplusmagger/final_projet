@@ -1,9 +1,12 @@
 {% extends "learning_logs/base.html" %}
-
+{% load static %}
 {% block page_header %}
-  <h1>Topics</h1>
+  <h1>话题</h1>
 {% endblock page_header %}   
 {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'learning_logs/style.css' %}">
+</head>
   <ul>
     {% for topic in topics %}
       <li><h3>
@@ -14,5 +17,5 @@
     {% endfor %}
   </ul>
 
-  <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a></h3>
+  <h3><a href="{% url 'learning_logs:new_topic' %}">添加一个新话题</a></h3>
 {% endblock content %}

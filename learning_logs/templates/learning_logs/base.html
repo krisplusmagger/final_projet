@@ -1,23 +1,23 @@
 {% load bootstrap4 %}
-
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,
     shrink-to-fit=no">
-  <title>Learning Log</title>
-
+  <title>学习日志</title>
+  <link rel="stylesheet" href="{% static 'learning_logs/style.css' %}">
   {% bootstrap_css %}
   {% bootstrap_javascript jquery='full' %}
 
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+  <nav class="navbar navbar-expand-md navbar-light bg-transparent mb-4 border">
 
     <a class="navbar-brand" href="{% url 'learning_logs:index'%}">
-        Learning Log</a>
+        学习日志</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -27,22 +27,22 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'learning_logs:topics'%}">
-              Topics</a></li>
+              话题</a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <span class="navbar-text"}">Hello, {{ user.username }}.</span>
+            <span class="navbar-text"}>Hello, {{ user.username }}.</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+            <a class="nav-link" href="{% url 'users:logout' %}">注销</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+            <a class="nav-link" href="{% url 'users:register' %}">注册</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:login' %}">Log in</a></li>
+            <a class="nav-link" href="{% url 'users:login' %}">登录</a></li>
         {% endif %}
       </ul>
     </div>

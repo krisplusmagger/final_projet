@@ -2,7 +2,7 @@
 {% load bootstrap4 %} 
 
 {% block page_header %} 
-    <h2>Log in to your account.</h2>
+    <h2>登录你的账户</h2>
 {% endblock page_header %}    
 
 {% block content %}
@@ -10,11 +10,11 @@
         {% csrf_token %} 
         {{ form.as_p }}
         {% buttons %} 
-            <button name="submit" class="btn btn-primary">Log in</button>
+            <button name="submit" class="btn btn-primary">登录</button>
         {% endbuttons %}
         <!-- <button name="submit">Log in</button> -->
         <input type="hidden" name = "next"
-        value="{% url 'learning_logs:index' %}" />
+        value="{% url 'learning_logs:topics' %}" />
         <!-- 提交成功后重定向到主页 -->
     </form>       
 {% endblock content %}     
